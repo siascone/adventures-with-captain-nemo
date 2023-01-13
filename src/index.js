@@ -1,8 +1,9 @@
-const Heading = require('./scripts/heading');
+import Game from "./scripts/game";
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('root');
-    const heading = new Heading('Hey Programmers!!');
-    console.log(heading.heading);
-    root.innerHTML = heading.heading;
+    const canvasElement = document.querySelector('canvas');
+    canvasElement.width = Game.WIDTH;
+    canvasElement.height = Game.HEIGTH;
+    const game = new Game(canvasElement);
 })
